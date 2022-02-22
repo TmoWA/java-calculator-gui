@@ -463,8 +463,8 @@ public class Controller {
             } else {
                 currentNumber.insert(0, '-');
             }
+            resultProperty.setValue(numberFormat.format(Double.parseDouble(currentNumber.toString())));
         }
-        resultProperty.setValue(numberFormat.format(Double.parseDouble(currentNumber.toString())));
     }
 
 }
