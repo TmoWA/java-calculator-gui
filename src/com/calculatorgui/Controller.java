@@ -183,7 +183,6 @@ public class Controller {
 
         switch(operator1) {
             case "(":
-                break;
             case ")":
                 break;
             case "^":
@@ -196,14 +195,6 @@ public class Controller {
                 }
                 break;
             case "*":
-                if(operator2.matches("[\\(\\)^]")) {
-                    precedence = -1;
-                } else if (operator2.equals("*") || operator2.equals("/") || operator2.contentEquals("%")) {
-                    precedence = 0;
-                } else if (operator2.matches("[\\+-]")) {
-                    precedence = 1;
-                }
-                break;
             case "/":
             case "%":
                 if(operator2.matches("[\\(\\)^]")) {
@@ -218,8 +209,6 @@ public class Controller {
             case "-":
                 if(operator2.equals("-") || operator2.equals("+")) {
                     precedence = 0;
-                } else {
-                    precedence = -1;
                 }
                 break;
             default:
@@ -230,7 +219,12 @@ public class Controller {
     }
 
     private void convertToReversePolishNotation() {
-        // wiki link https://en.wikipedia.org/wiki/Shunting-yard_algorithm#The_algorithm_in_detail
+        /* This method is based on the Shunting-yard algorithm for converting
+        expressions to the Reverse Polish notation form.
+
+        The following is a convenience wiki link for more details:
+        https://en.wikipedia.org/wiki/Shunting-yard_algorithm#The_algorithm_in_detail
+         */
 
         while(!expressionList.isEmpty()) {
 
