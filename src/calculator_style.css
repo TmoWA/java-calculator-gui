@@ -1,0 +1,54 @@
+.root {
+	-fx-background-color: #ededed;
+	-fx-control-inner-background: #ededed;
+}
+
+.button {
+	-fx-font-size:20;
+	-fx-background-radius: 0;
+	-fx-base: #e3e3e3;
+}
+
+.button:focused {
+    -fx-background-color: -fx-outer-border, -fx-inner-border, -fx-body-color;
+    -fx-background-insets: 0, 1, 2;
+    -fx-background-radius: 5, 4, 3;
+    -fx-background-radius: 0;
+}
+
+.button:hover {
+	-fx-base: #9c9c9c;
+}
+
+.button:pressed {
+	-fx-base: #bababa;
+}
+.number-button {
+	-fx-font-size:30;
+	-fx-base: #ebeef0;
+}
+
+.text-field {
+	-fx-font-size:20;
+	-fx-background-color: -fx-control-inner-background;
+    -fx-background-insets: 0;
+    -fx-padding: 1 3 1 3;
+}
+
+.text-field:focused {
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+    -fx-focus-color: transparent;
+}
+
+#resultField {
+	-fx-font-size: 40;
+}
+
+#equals-button {
+	-fx-base: #57bbde;
+}
+
+#positive-negative-button {
+	-fx-font-size:20;
+}
